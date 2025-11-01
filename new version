@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improving Young Lives Conference - NASUWT Manchester</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Custom palette based on the uploaded image
+                        'primary-dark': '#5D4B41', // Dark Brown/Taupe - Main BG/Text
+                        'secondary-light': '#D9C3A3', // Tan/Beige - Light BG/Highlights
+                        'accent-cyan': '#A4E0E6', // Light Cyan - Links/Headers
+                        'accent-orange': '#FF6B38', // Coral/Orange - CTA/Action
+                        'nasuwt-blue': '#101036', // NASUWT Blue (Deep Blue) for contrast
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for accessibility and visual appeal */
+        html { scroll-behavior: smooth; }
+        .header-shadow { box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+        .text-shadow { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+        .card-bg { background-color: rgba(255, 255, 255, 0.05); }
+
+        /* Ensure smooth, readable text on dark backgrounds */
+        .agenda-item:hover {
+            transform: scale(1.01);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-primary-dark text-secondary-light font-sans min-h-screen flex flex-col">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="sticky top-0 z-50 bg-nasuwt-blue/95 header-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo/Title -->
+                <a href="#hero" class="text-xl font-bold tracking-tight text-secondary-light hover:text-accent-cyan transition duration-300">
+                    <span class="text-accent-orange">NASUWT</span> Manchester
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#about" class="text-secondary-light hover:text-accent-cyan transition duration-300 font-medium">Overview</a>
+                    <a href="#goals" class="text-secondary-light hover:text-accent-cyan transition duration-300 font-medium">Goals</a>
+                    <a href="#agenda" class="text-secondary-light hover:text-accent-cyan transition duration-300 font-medium">Agenda</a>
+                    <a href="#speakers" class="text-secondary-light hover:text-accent-cyan transition duration-300 font-medium">Speakers</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <a href="#registration" id="nav-cta" class="hidden md:block bg-accent-orange hover:bg-orange-500 text-nasuwt-blue font-semibold py-2 px-4 rounded-lg shadow-md transform transition duration-300 ease-in-out hover:scale-105">
+                    Register on Eventbrite
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-secondary-light hover:text-accent-cyan focus:outline-none focus:ring-2 focus:ring-accent-cyan">
+                    <!-- Hamburger Icon -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-nasuwt-blue/95 pb-4 transition-all duration-300 ease-in-out">
+            <div class="px-2 pt-2 pb-3 space-y-1 flex flex-col items-center">
+                <a href="#about" class="text-secondary-light hover:text-accent-cyan block px-3 py-2 rounded-md text-base font-medium">Overview</a>
+                <a href="#goals" class="text-secondary-light hover:text-accent-cyan block px-3 py-2 rounded-md text-base font-medium">Goals</a>
+                <a href="#agenda" class="text-secondary-light hover:text-accent-cyan block px-3 py-2 rounded-md text-base font-medium">Agenda</a>
+                <a href="#speakers" class="text-secondary-light hover:text-accent-cyan block px-3 py-2 rounded-md text-base font-medium">Speakers</a>
+                <a href="#registration" class="w-2/3 mt-4 text-center bg-accent-orange hover:bg-orange-500 text-nasuwt-blue font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300 ease-in-out">
+                    Register on Eventbrite
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="hero" class="relative overflow-hidden py-24 md:py-32 bg-primary-dark border-b-8 border-accent-orange">
+            <!-- Background detail for visual interest -->
+            <div class="absolute inset-0 opacity-10 bg-[url('https://placehold.co/1920x1080/5D4B41/D9C3A3?text=Manchester+Pattern')] bg-repeat-x bg-cover"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tighter mb-4 leading-snug text-secondary-light text-shadow">
+                    Improving Young Lives Conference
+                </h1>
+                <p class="text-xl sm:text-2xl font-semibold text-accent-cyan mb-8">
+                    Organised by NASUWT Manchester
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-8 text-lg sm:text-2xl font-bold">
+                    <div class="text-secondary-light p-2 rounded-lg bg-nasuwt-blue/50">
+                        <span class="text-accent-orange">Date:</span> Wednesday 21st January 2026
+                    </div>
+                    <div class="text-secondary-light p-2 rounded-lg bg-nasuwt-blue/50">
+                        <span class="text-accent-orange">Venue:</span> Co-operative Academy Manchester Theatre
+                    </div>
+                </div>
+
+                <a href="#registration" class="mt-12 inline-block bg-accent-orange hover:bg-orange-500 text-nasuwt-blue text-xl font-bold py-3 px-8 rounded-xl shadow-2xl shadow-accent-orange/50 transform transition duration-500 ease-in-out hover:scale-105">
+                    Reserve Your Seat
+                </a>
+            </div>
+        </section>
+
+        <!-- Overview Section (Asterisks removed) -->
+        <section id="about" class="py-16 md:py-24 bg-secondary-light text-primary-dark">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 border-b-4 border-accent-orange pb-4">
+                    Conference Overview
+                </h2>
+                <p class="text-xl leading-relaxed mb-8">
+                    The Improving Young Lives Conference is designed to bring together key stakeholders in Manchester—including political representatives, community workers, and teachers from the NASUWT Manchester association—to collaboratively discuss and address the persistent barriers facing young people in the city.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    Our central aim is to forge stronger connections and vital links across the city that will benefit the next generation. The conference will be held in the spacious theatre of the Co-operative Academy Manchester, which offers an auditorium and outside spaces perfect for promoting community ideas and activities.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Goals Section -->
+        <section id="goals" class="py-16 md:py-24 bg-primary-dark border-t border-b border-nasuwt-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-accent-cyan">
+                    Key Objectives
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Goal Card 1 -->
+                    <div class="p-6 card-bg rounded-xl border-t-4 border-accent-cyan transition duration-300 hover:shadow-lg hover:border-accent-orange">
+                        <h3 class="text-2xl font-semibold mb-3 text-secondary-light">Policy Dialogue</h3>
+                        <p class="text-gray-300">Create an open dialogue by hearing directly from policymakers outside of the education sphere (e.g., Culture, Social Impact, Policing) to gain a wider perspective on youth challenges.</p>
+                    </div>
+                    <!-- Goal Card 2 -->
+                    <div class="p-6 card-bg rounded-xl border-t-4 border-accent-cyan transition duration-300 hover:shadow-lg hover:border-accent-orange">
+                        <h3 class="text-2xl font-semibold mb-3 text-secondary-light">City-Wide Cooperation</h3>
+                        <p class="text-gray-300">Promote cooperation across the city, utilizing NASUWT members and community partners to further an agenda of positivity and forward thinking for young people.</p>
+                    </div>
+                    <!-- Goal Card 3 -->
+                    <div class="p-6 card-bg rounded-xl border-t-4 border-accent-cyan transition duration-300 hover:shadow-lg hover:border-accent-orange">
+                        <h3 class="text-2xl font-semibold mb-3 text-secondary-light">Member Resources</h3>
+                        <p class="text-gray-300">Equip our members with resources and critical insight into improving the educational landscape and supporting young lives within Manchester.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agenda Section (Asterisks removed & Link updated) -->
+        <section id="agenda" class="py-16 md:py-24 bg-secondary-light text-primary-dark">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 border-b-4 border-nasuwt-blue pb-4">
+                    Provisional Running Order
+                </h2>
+                <p class="text-center text-lg mb-8 text-gray-700">The programme includes speeches, Q&A sessions, and a comprehensive open panel discussion.</p>
+
+                <!-- Question Submission Link/Button (UPDATED LINK) -->
+                <div class="text-center mb-10">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScUnY-UBU7QsLhvnB5x3nNBccgx2dm0KDVHAns-iGRJyQwRSw/viewform?usp=sharing&ouid=110970070538273367085" target="_blank" class="inline-flex items-center justify-center bg-nasuwt-blue hover:bg-primary-dark text-secondary-light border border-accent-cyan font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 ease-in-out hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-text mr-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M13 8H9"/><path d="M15 12H9"/></svg>
+                        Submit Your Panel Question Here
+                    </a>
+                    <p class="text-sm text-gray-600 mt-2">Submit questions ahead of time for selection by the panel.</p>
+                </div>
+                <!-- End Question Submission Link/Button -->
+
+                <div class="space-y-4">
+                    <!-- Agenda Item 1 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Welcome & Opening Remarks</p>
+                            <p class="text-sm text-gray-500">Matt Townsend (Host)</p>
+                        </div>
+                        <span class="text-accent-orange font-mono font-semibold">6:00 PM</span>
+                    </div>
+                    <!-- Agenda Item 2 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Keynote Speech from Academy Trust</p>
+                            <p class="text-sm text-gray-500">Representative from Co-op Academy Trust (Ruth Agnew)</p>
+                        </div>
+                        <span class="text-accent-orange font-mono font-semibold">6:05 PM</span>
+                    </div>
+                    <!-- Agenda Item 3 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Keynote: Mayor Andy Burnham & Q&A</p>
+                            <p class="text-sm text-gray-500 text-accent-orange font-semibold">(Appearance TBC, check closer to event date)</p>
+                        </div>
+                        <span class="text-accent-orange font-mono font-semibold">6:15 PM</span>
+                    </div>
+                    <!-- Agenda Item 4 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Keynote: NASUWT General Secretary & Q&A</p>
+                            <p class="text-sm text-gray-500 text-accent-orange font-semibold">(Matt Wrack, TBC)</p>
+                        </div>
+                        <span class="text-orange-500 font-mono font-semibold">6:30 PM</span>
+                    </div>
+                    <!-- Agenda Item 5 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Policing and Community Perspective</p>
+                            <p class="text-sm text-gray-500">Rick Thompson (GMP Lead on Knife Crime and Mental Health) & Q&A</p>
+                        </div>
+                        <span class="text-accent-orange font-mono font-semibold">6:45 PM</span>
+                    </div>
+                    
+                    <div class="p-4 bg-nasuwt-blue text-secondary-light text-center rounded-lg font-bold">
+                        7:00 PM - 7:10 PM | Comfort Break
+                    </div>
+
+                    <!-- Agenda Item 6 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Youth Volunteering and Engagement</p>
+                            <p class="text-sm text-gray-500">#iWill Youth Volunteering & Q&A</p>
+                        </div>
+                        <span class="text-accent-orange font-mono font-semibold">7:10 PM</span>
+                    </div>
+                    <!-- Agenda Item 7 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Violence Reduction Unit Insights</p>
+                            <p class="text-sm text-gray-500">Damion Dallimore (VRU at GMCA) & Q&A</p>
+                        </div>
+                        <span class="text-accent-orange font-mono font-semibold">7:25 PM</span>
+                    </div>
+                    <!-- Agenda Item 8 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Open Panel Discussion</p>
+                            <p class="text-sm text-gray-500">Featuring community leaders, political figures, and educational experts. Audience questions invited.</p>
+                        </div>
+                        <span class="text-accent-orange font-mono font-semibold">7:40 PM</span>
+                    </div>
+                    <!-- Agenda Item 9 -->
+                    <div class="p-4 bg-white rounded-lg flex justify-between items-center shadow-md agenda-item transition duration-300">
+                        <div class="flex-1">
+                            <p class="text-lg font-bold">Networking & Community Engagement</p>
+                            <p class="text-sm text-gray-500">"Afters" session with stalls, sign-ups, and meet-and-greets in the foyer and diner 3.</p>
+                        </div>
+                        <span class="text-accent-orange font-mono font-semibold">8:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers/Partners Section -->
+        <section id="speakers" class="py-16 md:py-24 bg-primary-dark border-t border-b border-nasuwt-blue">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-accent-cyan">
+                    Confirmed & Invited Contributors
+                </h2>
+                <p class="text-center text-lg text-gray-300 mb-10">We are bringing together a diverse group of stakeholders committed to Manchester's youth.</p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
+                    <!-- Speaker 1 (Confirmed) -->
+                    <div class="text-center p-4 rounded-xl border-2 border-accent-orange bg-nasuwt-blue/50">
+                        <img src="https://placehold.co/100x100/A4E0E6/5D4B41?text=RT" alt="Rick Thompson" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-4 border-accent-cyan">
+                        <h3 class="text-lg font-semibold text-secondary-light leading-tight">Rick Thompson</h3>
+                        <p class="text-accent-cyan text-sm">GMP Lead</p>
+                        <p class="text-xs text-gray-400 mt-1">Policing/Community</p>
+                    </div>
+
+                    <!-- Speaker 2 (Confirmed) -->
+                    <div class="text-center p-4 rounded-xl border-2 border-accent-orange bg-nasuwt-blue/50">
+                        <img src="https://placehold.co/100x100/A4E0E6/5D4B41?text=DD" alt="Damion Dallimore" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-4 border-accent-cyan">
+                        <h3 class="text-lg font-semibold text-secondary-light leading-tight">Damion Dallimore</h3>
+                        <p class="text-accent-cyan text-sm">VRU, GMCA</p>
+                        <p class="text-xs text-gray-400 mt-1">Violence Reduction</p>
+                    </div>
+                    
+                    <!-- Speaker 3 (Confirmed) -->
+                    <div class="text-center p-4 rounded-xl border-2 border-accent-orange bg-nasuwt-blue/50">
+                        <img src="https://placehold.co/100x100/A4E0E6/5D4B41?text=iW" alt="#iwill" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-4 border-accent-cyan">
+                        <h3 class="text-lg font-semibold text-secondary-light leading-tight">#iWill Rep.</h3>
+                        <p class="text-accent-cyan text-sm">Youth Volunteering</p>
+                        <p class="text-xs text-gray-400 mt-1">Attending</p>
+                    </div>
+
+                    <!-- Speaker 4 (Confirmed) -->
+                    <div class="text-center p-4 rounded-xl border-2 border-accent-orange bg-nasuwt-blue/50">
+                        <img src="https://placehold.co/100x100/A4E0E6/5D4B41?text=RA" alt="Ruth Agnew" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-4 border-accent-cyan">
+                        <h3 class="text-lg font-semibold text-secondary-light leading-tight">Ruth Agnew</h3>
+                        <p class="text-accent-cyan text-sm">Co-op Academy Trust</p>
+                        <p class="text-xs text-gray-400 mt-1">Sending Representative</p>
+                    </div>
+
+                    <!-- Speaker 5 (TBC/Invited) -->
+                    <div class="text-center p-4 rounded-xl border-2 border-secondary-light bg-primary-dark/50">
+                        <img src="https://placehold.co/100x100/5D4B41/D9C3A3?text=AB" alt="Andy Burnham" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-4 border-secondary-light">
+                        <h3 class="text-lg font-semibold text-secondary-light leading-tight">Mayor Andy Burnham</h3>
+                        <p class="text-accent-cyan text-sm">Greater Manchester</p>
+                        <p class="text-xs text-secondary-light mt-1 text-accent-orange font-semibold">TBC</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center text-sm text-gray-400">
+                    <p>Other invited guests and partners include the Culture and Social Impact Fund (GMCA), Police, Fire and Crime Panel (GMCA), I Am Greater, Manchester Young Lives, and the Manchester University Faculty of Education.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Registration & Venue Section (Address corrected) -->
+        <section id="registration" class="py-16 md:py-24 bg-nasuwt-blue text-secondary-light">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Venue -->
+                    <div class="p-6 rounded-xl border border-secondary-light bg-primary-dark/70">
+                        <h3 class="text-3xl font-bold mb-4 text-accent-cyan">Venue: Co-op Academy Manchester</h3>
+                        <p class="text-lg mb-4">The event will be hosted in the Academy's theatre, which has a capacity of **229**, allowing ample space for the stage, auditorium, and engagement areas.</p>
+                        
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <!-- CORRECTED ADDRESS HERE -->
+                            <li><span class="font-semibold text-accent-cyan">Address:</span> Co operative Academy Manchester, Plant Hill Road, Blackley, M9 0FW</li>
+                            <li><span class="font-semibold text-accent-cyan">Parking:</span> Two main car parks available, plus reserved spaces at the front.</li>
+                            <li><span class="font-semibold text-accent-cyan">Networking:</span> Dedicated foyer and diner areas for "afters" and display stands.</li>
+                        </ul>
+                        <!-- Placeholder Image for Venue -->
+                        <img src="https://placehold.co/600x300/5D4B41/D9C3A3?text=Co-op+Academy+Manchester+Venue" alt="Co-op Academy Manchester Venue Placeholder" class="mt-6 w-full rounded-lg opacity-80 border-2 border-secondary-light">
+
+                    </div>
+
+                    <!-- Registration CTA -->
+                    <div class="p-6 rounded-xl bg-accent-orange text-nasuwt-blue shadow-2xl shadow-accent-orange/50 flex flex-col justify-center">
+                        <h3 class="text-3xl font-extrabold mb-4">Ticket Information</h3>
+                        <p class="text-lg mb-6 text-gray-800 font-medium">
+                            Tickets will be administered through Eventbrite. We anticipate limiting tickets to 200 members to ensure space for press, guests, and community partners.
+                        </p>
+                        <p class="text-base mb-8 font-semibold">
+                            Please check with the NASUWT Manchester Association for confirmation details using your membership number.
+                        </p>
+                        
+                        <!-- Form/Link Area -->
+                        <button onclick="showConfirmation('eventbrite')" class="w-full bg-nasuwt-blue hover:bg-primary-dark text-accent-cyan text-xl font-bold py-4 rounded-xl shadow-lg transform transition duration-300 ease-in-out hover:scale-[1.03]">
+                            Visit Eventbrite to Register
+                        </button>
+                        <p class="mt-4 text-center text-sm text-gray-700">A waiting list will be utilised once capacity is reached.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-nasuwt-blue py-10 border-t border-accent-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xl font-bold text-secondary-light mb-2">NASUWT Manchester Association</p>
+            <p class="text-sm text-gray-400 mb-6">Improving Young Lives Conference | Wednesday 21st January 2026</p>
+
+            <div class="flex justify-center space-x-6 text-gray-400 mb-6">
+                <!-- Contact Info: Rob Tollman's contact details -->
+                <a href="mailto:robtollman.nasuwt@gmail.com" class="hover:text-accent-cyan transition duration-300 flex items-center">
+                    <!-- Icon: Mail -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    robtollman.nasuwt@gmail.com
+                </a>
+                <a href="tel:07823662223" class="hover:text-accent-cyan transition duration-300 flex items-center">
+                    <!-- Icon: Phone -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.7-6.7A19.79 19.79 0 0 1 2 4.18V2.32a2 2 0 0 1 2-2 19.79 19.79 0 0 1 3.07 8.63 19.5 19.5 0 0 1 6.7 6.7A19.79 19.79 0 0 1 22 16.92z"/></svg>
+                    07823662223 (Rob Tollman)
+                </a>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-4">&copy; 2026 NASUWT Manchester Association. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple Custom Modal for Confirmation (Alternative to alert()) -->
+    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center p-4 z-50 transition-opacity duration-300 opacity-0">
+        <div class="bg-primary-dark p-8 rounded-xl shadow-2xl max-w-sm w-full border border-accent-orange transform transition-transform duration-300 scale-90 text-secondary-light">
+            <h3 id="modal-title" class="text-3xl font-bold text-accent-cyan mb-4">External Link</h3>
+            <p id="modal-text" class="text-gray-300 mb-6">This button would link you directly to the Eventbrite page for ticket registration in a live application.</p>
+            <button onclick="hideConfirmation()" class="w-full bg-accent-orange hover:bg-secondary-light text-nasuwt-blue font-semibold py-3 rounded-lg transition duration-300">
+                Acknowledge
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- JavaScript for Interactivity ---
+
+        // 1. Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 2. Hide mobile menu on link click (for smooth scrolling)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Wait briefly for scroll animation to start before hiding
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 100);
+            });
+        });
+
+        // 3. Custom Modal Functionality (Used instead of alert/confirm)
+        const modal = document.getElementById('confirmation-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+
+        function showConfirmation(type) {
+            // Only 'eventbrite' remains for the confirmation modal logic
+            if (type !== 'eventbrite') return;
+            
+            const title = 'Eventbrite Registration';
+            const text = 'This button would link you directly to the **Eventbrite page** for ticket registration in a live application.';
+
+            modalTitle.textContent = title;
+            modalText.innerHTML = text; // Use innerHTML to handle bolding within the modal text
+
+            modal.classList.remove('hidden');
+            // Force a reflow before applying opacity and scale changes for transition
+            void modal.offsetWidth; 
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-90');
+            modal.classList.add('flex'); // Add flex after removing hidden
+        }
+
+        function hideConfirmation() {
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-90');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300); // Match transition duration
+        }
+    </script>
+</body>
+</html>
